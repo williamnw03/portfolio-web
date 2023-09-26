@@ -1,0 +1,569 @@
+:root {
+  --beige-100: #f8f0e5;
+  --beige-200: #eadbc8;
+  --beige-300: #dac0a3;
+  --navy: #0f2c59;
+}
+
+@keyframes floating {
+  from {
+    transform: translate(0, 0px);
+  }
+  65% {
+    transform: translate(0, 10px);
+  }
+  to {
+    transform: translate(0, -0px);
+  }
+  /* animation-name: floating;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out; */
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--beige-100);
+  overflow-x: hidden;
+}
+
+div.main-content {
+  max-width: 1300px;
+  width: 100%;
+
+  margin: 0 auto;
+  margin-top: 2em;
+  padding: 1em;
+}
+
+/* Navbar */
+nav.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--navy);
+
+  padding: 0em 1em 0em 1em;
+}
+
+nav.navbar div.logo {
+  display: none;
+  font-weight: 500;
+}
+
+nav.navbar ul.navigation {
+  display: flex;
+  justify-content: space-around;
+
+  width: 100%;
+  list-style-type: none;
+}
+
+nav.navbar ul.navigation li a {
+  color: #0f2c59;
+
+  display: block;
+  padding: 0.5em;
+  line-height: 0;
+
+  transition: all 0.3s;
+}
+
+nav.navbar ul.navigation li a:hover {
+  color: whitesmoke;
+  background-color: var(--navy);
+}
+
+nav.navbar ul.navigation li a span {
+  font-size: 2em;
+}
+
+/* Header */
+div.main-content header.header {
+  position: relative;
+
+  color: var(--navy);
+}
+
+div.main-content header.header h1.header-intro {
+  font-size: 1.2em;
+  font-weight: 200;
+}
+
+div.main-content header.header h1.header-name {
+  line-height: 100%;
+  font-weight: 500;
+}
+
+div.main-content header.header div.header-all-social-media {
+  display: flex;
+  gap: 1em;
+}
+
+div.main-content
+  header.header
+  div.header-all-social-media
+  a.header-social-media-button {
+  display: block;
+  margin-top: 1em;
+  padding: 0.8em;
+  width: max-content;
+  transform-origin: 0%;
+
+  border: 1px solid var(--navy);
+  border-radius: 0.3em;
+
+  font-size: 0.8em;
+  color: var(--navy);
+  text-decoration: none;
+  line-height: 0;
+
+  transition: all 0.3s;
+}
+
+div.main-content
+  header.header
+  div.header-all-social-media
+  a.header-social-media-button:hover {
+  transform: scale(1.2);
+  color: whitesmoke;
+  background-color: var(--navy);
+}
+
+div.main-content header.header div.background-deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+
+  opacity: 0.1;
+
+  font-weight: 700;
+
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 0.01em;
+  -webkit-text-stroke-color: black;
+
+  transform: rotate(-15deg);
+
+  font-size: 5em;
+
+  animation-name: floating;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* About Me */
+div.main-content section.about-me {
+  margin-top: 5em;
+}
+
+div.main-content section.about-me div.layout-about-me {
+  margin-top: 2em;
+}
+
+div.main-content section.about-me h2.title-about-me {
+  position: relative;
+
+  text-align: center;
+
+  font-size: 2em;
+  color: var(--navy);
+}
+
+div.main-content section.about-me h2.title-about-me::before {
+  content: "About Me";
+
+  position: absolute;
+  z-index: -100;
+  transform: scale(2);
+
+  opacity: 0.08;
+}
+
+div.main-content section.about-me div.image-about-me {
+  position: relative;
+  line-height: 0;
+}
+
+div.main-content section.about-me div.image-about-me::before {
+  content: "";
+  position: absolute;
+  z-index: -100;
+  width: 100%;
+  height: 100%;
+  border: 4px solid var(--navy);
+  border-radius: 1%;
+  top: 4%;
+  left: 6%;
+
+  animation-name: floating;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+div.main-content section.about-me div.image-about-me img {
+  width: 100%;
+
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+
+  animation-name: floating;
+  animation-delay: 0.5s;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+div.main-content section.about-me h4.sub-title-about-me {
+  color: var(--navy);
+}
+
+div.main-content section.about-me h4.sub-title-about-me span {
+  color: var(--navy);
+}
+
+div.main-content section.about-me div.layout-about-me div.content-about-me {
+  margin-top: 4em;
+}
+
+div.main-content section.about-me div.content-about-me p {
+  color: var(--navy);
+}
+
+/* Skills */
+div.main-content section.skills {
+  margin-top: 5em;
+}
+
+div.main-content section.skills h2.title-skills {
+  position: relative;
+
+  text-align: center;
+
+  font-size: 2em;
+  color: var(--navy);
+}
+
+div.main-content section.skills h2.title-skills::before {
+  content: "Skills";
+
+  position: absolute;
+  z-index: -100;
+  transform: scale(2);
+
+  opacity: 0.08;
+}
+
+div.main-content section.skills div.all-skills {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 1em;
+
+  margin-top: 2em;
+}
+
+div.main-content section.skills div.all-skills div.skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-basis: 100%;
+
+  position: relative;
+
+  background-color: var(--beige-100);
+  color: var(--navy);
+
+  border-radius: 0.5em;
+  padding: 1em;
+
+  user-select: none;
+
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+
+  transition: all 0.3s;
+}
+
+div.main-content section.skills div.all-skills div.skill:hover {
+  background-color: var(--navy);
+  color: whitesmoke;
+
+  animation-name: floating;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+div.main-content section.skills div.all-skills div.skill * {
+  position: relative;
+  z-index: 100;
+}
+
+div.main-content section.skills div.all-skills div.skill div.skill-icon {
+  line-height: 0;
+}
+
+div.main-content section.skills div.all-skills div.skill div.skill-icon span {
+  font-size: 2em;
+}
+
+/* Web Portfolio */
+div.main-content section.portfolio-web {
+  margin-top: 5em;
+}
+
+div.main-content section.portfolio-web h2.title-portfolio-web {
+  position: relative;
+
+  text-align: center;
+
+  font-size: 2em;
+  color: var(--navy);
+}
+
+div.main-content section.portfolio-web h2.title-portfolio-web::before {
+  content: "Web Portfolio";
+
+  position: absolute;
+  z-index: -100;
+  transform: scale(2);
+
+  opacity: 0.08;
+}
+
+div.main-content section.portfolio-web div.all-webs {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 1em;
+
+  margin-top: 2em;
+}
+
+div.main-content section.portfolio-web div.all-webs div.web {
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+
+  padding: 1em;
+  border-radius: 0.5em;
+
+  background-color: var(--beige-100);
+
+  transition: all 0.3s;
+}
+
+div.main-content section.portfolio-web div.all-webs div.web div.web-image img {
+  width: 100%;
+
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+}
+
+div.main-content section.portfolio-web div.all-webs div.web:hover {
+  background-color: var(--navy);
+
+  animation-name: floating;
+  animation-delay: 0.5s;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+div.main-content
+  section.portfolio-web
+  div.all-webs
+  div.web:hover
+  div.web-image
+  img {
+  animation-name: floating;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+div.main-content section.portfolio-web div.all-webs div.web h2.web-name {
+  color: var(--navy);
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 500;
+
+  margin-top: 0.5em;
+
+  transition: all 0.3s;
+}
+
+div.main-content section.portfolio-web div.all-webs div.web a.visit-page {
+  color: maroon;
+  text-align: center;
+  text-decoration: none;
+
+  display: block;
+  width: max-content;
+  margin: 0 auto;
+
+  transition: all 0.3s;
+}
+
+div.main-content section.portfolio-web div.all-webs div.web:hover h2.web-name,
+div.main-content section.portfolio-web div.all-webs div.web:hover a.visit-page {
+  color: whitesmoke;
+}
+
+div.main-content section.portfolio-web div.all-webs div.web:hover a.visit-page {
+  text-decoration: underline;
+}
+
+@media all and (min-width: 360px) {
+  div.main-content {
+    padding: 1.5em;
+  }
+
+  /* Header */
+  div.main-content header.header h1.header-intro {
+    font-size: 1.6em;
+  }
+
+  div.main-content header.header h1.header-name {
+    font-size: 2.5em;
+  }
+
+  div.main-content header.header div.background-deco {
+    font-size: 8em;
+  }
+
+  /* About Me */
+  div.main-content section.about-me div.layout-about-me {
+    margin-top: 4em;
+  }
+
+  div.main-content section.about-me h4.sub-title-about-me {
+    font-size: 1.5em;
+  }
+}
+
+@media all and (min-width: 540px) {
+  /* Header */
+  div.main-content header.header h1.header-intro {
+    font-size: 2em;
+  }
+
+  div.main-content header.header h1.header-name {
+    font-size: 3.5em;
+  }
+
+  div.main-content
+    header.header
+    div.header-all-social-media
+    a.header-social-media-button {
+    padding: 1em;
+  }
+
+  div.main-content
+    header.header
+    div.header-all-social-media
+    a.header-social-media-button
+    svg {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  /* About Me */
+
+  div.main-content section.about-me h2.title-about-me {
+    font-size: 3em;
+  }
+
+  div.main-content section.about-me div.image-about-me img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  div.main-content section.about-me div.layout-about-me div.content-about-me {
+    margin-top: 0;
+  }
+
+  /* Skills */
+  div.main-content section.skills h2.title-skills {
+    font-size: 3em;
+  }
+
+  /* Web Portfolio */
+  div.main-content section.portfolio-web h2.title-portfolio-web {
+    font-size: 3em;
+  }
+}
+
+@media all and (min-width: 768px) {
+  /* About Me */
+  div.main-content section.about-me div.layout-about-me {
+    display: flex;
+    align-items: center;
+    gap: 2.5em;
+  }
+
+  div.main-content section.about-me div.layout-about-me div.content-about-me {
+    flex: 1 1 0%;
+  }
+
+  div.main-content section.about-me div.layout-about-me div.image-about-me {
+    flex-basis: 40%;
+  }
+
+  /* Skills */
+
+  div.main-content section.skills div.all-skills div.skill {
+    flex-basis: 45%;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  /* Header */
+  div.main-content header.header h1.header-intro {
+    font-size: 3em;
+  }
+
+  div.main-content header.header h1.header-name {
+    font-size: 4.5em;
+  }
+
+  div.main-content header.header div.background-deco {
+    font-size: 11em;
+  }
+
+  div.main-content
+    header.header
+    div.header-all-social-media
+    a.header-social-media-button
+    svg {
+    width: 1.7em;
+    height: 1.7em;
+  }
+
+  /* Web Portfolio */
+  div.main-content section.portfolio-web div.all-webs div.web {
+    flex-basis: 45%;
+  }
+}
+
+@media all and (min-width: 1280px) {
+  /* About Me */
+  div.main-content section.about-me div.layout-about-me {
+    gap: 4em;
+  }
+}
