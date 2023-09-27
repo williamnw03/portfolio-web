@@ -37,6 +37,10 @@ body {
   overflow-x: hidden;
 }
 
+footer.footer {
+  margin-top: 6em;
+}
+
 div.main-content {
   max-width: 1300px;
   width: 100%;
@@ -66,7 +70,7 @@ nav.navbar ul.navigation {
   display: flex;
   justify-content: space-around;
 
-  width: 100%;
+  flex-basis: 100%;
   list-style-type: none;
 }
 
@@ -109,6 +113,7 @@ div.main-content header.header h1.header-name {
 div.main-content header.header div.header-all-social-media {
   display: flex;
   gap: 1em;
+  flex-wrap: wrap;
 }
 
 div.main-content
@@ -270,7 +275,7 @@ div.main-content section.skills h2.title-skills::before {
 
 div.main-content section.skills div.all-skills {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: center;
   gap: 1em;
 
@@ -349,7 +354,7 @@ div.main-content section.portfolio-web h2.title-portfolio-web::before {
 div.main-content section.portfolio-web div.all-webs {
   display: flex;
   justify-content: center;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   gap: 1em;
 
   margin-top: 2em;
@@ -428,6 +433,91 @@ div.main-content section.portfolio-web div.all-webs div.web:hover a.visit-page {
   text-decoration: underline;
 }
 
+/* Photo Portfolio */
+div.main-content section.portfolio-photo {
+  margin-top: 5em;
+}
+
+div.main-content section.portfolio-photo h2.title-portfolio-photo {
+  position: relative;
+
+  text-align: center;
+
+  font-size: 2em;
+  color: var(--navy);
+}
+
+div.main-content section.portfolio-photo h2.title-portfolio-photo::before {
+  content: "Portfolio Photos";
+
+  position: absolute;
+  z-index: -100;
+  transform: scale(2);
+
+  opacity: 0.08;
+}
+
+div.main-content section.portfolio-photo p.more-photos {
+  text-align: center;
+  color: var(--navy);
+}
+
+div.main-content section.portfolio-photo p.more-photos a {
+  color: maroon;
+  text-decoration: none;
+}
+
+div.main-content section.portfolio-photo div.photos-portfolio {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+
+  margin-top: 2em;
+
+  position: relative;
+}
+
+div.main-content section.portfolio-photo div.photos-portfolio::before {
+  content: "";
+  position: absolute;
+  z-index: -100;
+  width: 100%;
+  height: 100%;
+  border: 4px solid var(--navy);
+  border-radius: 1%;
+  top: 2%;
+  left: -5%;
+
+  animation-name: floating;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+div.main-content section.portfolio-photo div.photos-portfolio div.photos-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+div.main-content
+  section.portfolio-photo
+  div.photos-portfolio
+  div.photos-col
+  div.each-photo {
+  line-height: 0;
+}
+
+div.main-content
+  section.portfolio-photo
+  div.photos-portfolio
+  div.photos-col
+  div.each-photo
+  img {
+  width: 100%;
+}
+
 @media all and (min-width: 360px) {
   div.main-content {
     padding: 1.5em;
@@ -483,7 +573,6 @@ div.main-content section.portfolio-web div.all-webs div.web:hover a.visit-page {
   }
 
   /* About Me */
-
   div.main-content section.about-me h2.title-about-me {
     font-size: 3em;
   }
@@ -493,11 +582,6 @@ div.main-content section.portfolio-web div.all-webs div.web:hover a.visit-page {
     aspect-ratio: 1/1;
     object-fit: cover;
   }
-
-  div.main-content section.about-me div.layout-about-me div.content-about-me {
-    margin-top: 0;
-  }
-
   /* Skills */
   div.main-content section.skills h2.title-skills {
     font-size: 3em;
@@ -507,9 +591,36 @@ div.main-content section.portfolio-web div.all-webs div.web:hover a.visit-page {
   div.main-content section.portfolio-web h2.title-portfolio-web {
     font-size: 3em;
   }
+
+  /* Photo Portfolio */
+  div.main-content section.portfolio-photo h2.title-portfolio-photo {
+    font-size: 3em;
+  }
 }
 
 @media all and (min-width: 768px) {
+  div.main-content {
+    margin-top: 6em;
+  }
+
+  /* Navbar */
+  nav.navbar {
+    justify-content: space-around;
+  }
+
+  nav.navbar div.logo {
+    display: block;
+    font-size: 2em;
+  }
+
+  nav.navbar ul.navigation {
+    justify-content: flex-start;
+    flex-basis: 0;
+  }
+  nav.navbar ul.navigation li a span {
+    font-size: 2.5em;
+  }
+
   /* About Me */
   div.main-content section.about-me div.layout-about-me {
     display: flex;
@@ -525,9 +636,38 @@ div.main-content section.portfolio-web div.all-webs div.web:hover a.visit-page {
     flex-basis: 40%;
   }
 
+  div.main-content section.about-me div.layout-about-me div.content-about-me {
+    margin-top: 0;
+  }
+
   /* Skills */
+  div.main-content section.skills div.all-skills {
+    flex-flow: row wrap;
+  }
 
   div.main-content section.skills div.all-skills div.skill {
+    flex-basis: 45%;
+  }
+
+  /* Photo Portfolio */
+  div.main-content section.portfolio-photo div.photos-portfolio {
+    flex-flow: row wrap;
+  }
+
+  div.main-content section.portfolio-photo div.photos-portfolio::before {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    width: 80%;
+    height: 80%;
+  }
+
+  div.main-content section.portfolio-photo div.photos-portfolio div.photos-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
     flex-basis: 45%;
   }
 }
@@ -556,6 +696,11 @@ div.main-content section.portfolio-web div.all-webs div.web:hover a.visit-page {
   }
 
   /* Web Portfolio */
+  div.main-content section.portfolio-web div.all-webs {
+    flex-flow: row wrap;
+    gap: 2em;
+  }
+
   div.main-content section.portfolio-web div.all-webs div.web {
     flex-basis: 45%;
   }
