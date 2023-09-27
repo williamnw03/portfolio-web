@@ -433,12 +433,12 @@ div.main-content section.portfolio-web div.all-webs div.web:hover a.visit-page {
   text-decoration: underline;
 }
 
-/* Photo Portfolio */
-div.main-content section.portfolio-photo {
+/* Photo/Design Portfolio */
+div.main-content section.portfolio-layout-img {
   margin-top: 5em;
 }
 
-div.main-content section.portfolio-photo h2.title-portfolio-photo {
+div.main-content section.portfolio-layout-img h2.title-portfolio-layout-img {
   position: relative;
 
   text-align: center;
@@ -447,8 +447,10 @@ div.main-content section.portfolio-photo h2.title-portfolio-photo {
   color: var(--navy);
 }
 
-div.main-content section.portfolio-photo h2.title-portfolio-photo::before {
-  content: "Portfolio Photos";
+div.main-content
+  section.portfolio-layout-img.portfolio-photo
+  h2.title-portfolio-layout-img::before {
+  content: "Photos Portfolio";
 
   position: absolute;
   z-index: -100;
@@ -457,17 +459,29 @@ div.main-content section.portfolio-photo h2.title-portfolio-photo::before {
   opacity: 0.08;
 }
 
-div.main-content section.portfolio-photo p.more-photos {
+div.main-content
+  section.portfolio-layout-img.portfolio-design
+  h2.title-portfolio-layout-img::before {
+  content: "Design Portfolio";
+
+  position: absolute;
+  z-index: -100;
+  transform: scale(2);
+
+  opacity: 0.08;
+}
+
+div.main-content section.portfolio-layout-img p.more-items {
   text-align: center;
   color: var(--navy);
 }
 
-div.main-content section.portfolio-photo p.more-photos a {
+div.main-content section.portfolio-layout-img p.more-items a {
   color: maroon;
   text-decoration: none;
 }
 
-div.main-content section.portfolio-photo div.photos-portfolio {
+div.main-content section.portfolio-layout-img div.layout-img-portfolio {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -478,7 +492,7 @@ div.main-content section.portfolio-photo div.photos-portfolio {
   position: relative;
 }
 
-div.main-content section.portfolio-photo div.photos-portfolio::before {
+div.main-content section.portfolio-layout-img div.layout-img-portfolio::before {
   content: "";
   position: absolute;
   z-index: -100;
@@ -495,27 +509,84 @@ div.main-content section.portfolio-photo div.photos-portfolio::before {
   animation-timing-function: ease-in-out;
 }
 
-div.main-content section.portfolio-photo div.photos-portfolio div.photos-col {
+div.main-content
+  section.portfolio-layout-img
+  div.layout-img-portfolio
+  div.layout-img-col {
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
 
 div.main-content
-  section.portfolio-photo
-  div.photos-portfolio
-  div.photos-col
-  div.each-photo {
+  section.portfolio-layout-img
+  div.layout-img-portfolio
+  div.layout-img-col
+  div.each-layout-img {
   line-height: 0;
 }
 
 div.main-content
-  section.portfolio-photo
-  div.photos-portfolio
-  div.photos-col
-  div.each-photo
+  section.portfolio-layout-img
+  div.layout-img-portfolio
+  div.layout-img-col
+  div.each-layout-img
   img {
   width: 100%;
+}
+
+/* Video Portfolio */
+div.main-content section.portfolio-video {
+  margin-top: 5em;
+}
+
+div.main-content section.portfolio-video h2.title-portfolio-video {
+  position: relative;
+
+  text-align: center;
+
+  font-size: 2em;
+  color: var(--navy);
+}
+
+div.main-content section.portfolio-video h2.title-portfolio-video::before {
+  content: "Video Portfolio";
+
+  position: absolute;
+  z-index: -100;
+  transform: scale(2);
+
+  opacity: 0.08;
+}
+
+div.main-content section.portfolio-video p.more-videos {
+  text-align: center;
+  color: var(--navy);
+}
+
+div.main-content section.portfolio-video p.more-videos a {
+  color: maroon;
+  text-decoration: none;
+}
+
+div.main-content section.portfolio-video div.videos-portfolio {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+
+  margin-top: 2em;
+
+  position: relative;
+}
+
+div.main-content
+  section.portfolio-video
+  div.videos-portfolio
+  div.each-video
+  iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
 }
 
 @media all and (min-width: 360px) {
@@ -592,8 +663,13 @@ div.main-content
     font-size: 3em;
   }
 
-  /* Photo Portfolio */
-  div.main-content section.portfolio-photo h2.title-portfolio-photo {
+  /* Photo/Design Portfolio */
+  div.main-content section.portfolio-layout-img h2.title-portfolio-layout-img {
+    font-size: 3em;
+  }
+
+  /* Video Portfolio */
+  div.main-content section.portfolio-video h2.title-portfolio-video {
     font-size: 3em;
   }
 }
@@ -649,12 +725,14 @@ div.main-content
     flex-basis: 45%;
   }
 
-  /* Photo Portfolio */
-  div.main-content section.portfolio-photo div.photos-portfolio {
+  /* Photo/Design Portfolio */
+  div.main-content section.portfolio-layout-img div.layout-img-portfolio {
     flex-flow: row wrap;
   }
 
-  div.main-content section.portfolio-photo div.photos-portfolio::before {
+  div.main-content
+    section.portfolio-layout-img
+    div.layout-img-portfolio::before {
     top: 50%;
     left: 50%;
     translate: -50% -50%;
@@ -663,11 +741,27 @@ div.main-content
     height: 80%;
   }
 
-  div.main-content section.portfolio-photo div.photos-portfolio div.photos-col {
+  div.main-content
+    section.portfolio-layout-img
+    div.layout-img-portfolio
+    div.layout-img-col {
     display: flex;
     flex-direction: column;
     gap: 1em;
 
+    flex-basis: 45%;
+  }
+
+  /* Video Portfolio */
+  div.main-content section.portfolio-video div.videos-portfolio {
+    flex-flow: row wrap;
+  }
+
+  div.main-content section.portfolio-video div.videos-portfolio {
+    flex-flow: row wrap;
+  }
+
+  div.main-content section.portfolio-video div.videos-portfolio div.each-video {
     flex-basis: 45%;
   }
 }
