@@ -31,11 +31,13 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 body {
   background-color: var(--beige-100);
   overflow-x: hidden;
+  width: 100vw;
 }
 
 footer.footer {
@@ -51,6 +53,24 @@ div.main-content {
   padding: 1em;
 }
 
+/* Scroll Progress */
+div.scroll-progress {
+  width: 100vw;
+  height: 1vh;
+  background-color: var(--beige-200);
+
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+}
+
+div.scroll-progress div.inner-progress {
+  background-color: var(--beige-300);
+  height: 100%;
+  width: 0%;
+}
+
 /* Navbar */
 nav.navbar {
   display: flex;
@@ -59,7 +79,10 @@ nav.navbar {
 
   color: var(--navy);
 
+  width: 100%;
   padding: 0em 1em 0em 1em;
+
+  margin-top: 1vh;
 }
 
 nav.navbar div.logo {
