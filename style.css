@@ -85,6 +85,13 @@ nav.navbar {
   margin-top: 1vh;
 }
 
+nav.navbar.moved-bottom {
+  background-color: var(--beige-100);
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+}
+
 nav.navbar div.logo {
   display: none;
   font-weight: 500;
