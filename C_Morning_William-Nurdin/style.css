@@ -411,7 +411,7 @@ div.main-content section.portfolio-web div.all-webs div.web div.web-image img {
 }
 
 div.main-content section.portfolio-web div.all-webs div.web:hover {
-  background-color: var(--navy);
+  border: 2px solid var(--navy);
 
   animation-name: floating;
   animation-delay: 0.5s;
@@ -457,7 +457,7 @@ div.main-content section.portfolio-web div.all-webs div.web a.visit-page {
 
 div.main-content section.portfolio-web div.all-webs div.web:hover h2.web-name,
 div.main-content section.portfolio-web div.all-webs div.web:hover a.visit-page {
-  color: whitesmoke;
+  /* color: whitesmoke; */
 }
 
 div.main-content section.portfolio-web div.all-webs div.web:hover a.visit-page {
