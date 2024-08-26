@@ -490,11 +490,6 @@ div.main-content section.portfolio-web div.all-webs div.web a.visit-page {
   transition: all 0.3s;
 }
 
-div.main-content section.portfolio-web div.all-webs div.web:hover h2.web-name,
-div.main-content section.portfolio-web div.all-webs div.web:hover a.visit-page {
-  /* color: whitesmoke; */
-}
-
 div.main-content section.portfolio-web div.all-webs div.web:hover a.visit-page {
   text-decoration: underline;
 }
