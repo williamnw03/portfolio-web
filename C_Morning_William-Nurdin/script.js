@@ -18,3 +18,33 @@ document.addEventListener("scroll", (e) => {
     navbar.classList.remove("moved-bottom");
   }
 });
+
+// Circle follow Cursor
+const circleFollow = document.querySelector("div.circle-follow-cursor");
+let xPosition;
+let yPosition;
+
+document.addEventListener("mousemove", (e) => {
+  xPosition = e.pageX;
+  yPosition = e.pageY;
+
+  circleFollow.style.display = "block";
+
+  circleFollow.style.top = `${yPosition + 10}px`;
+  circleFollow.style.left = `${xPosition + 10}px`;
+
+  const style = window.getComputedStyle(e.target);
+  if (style.getPropertyValue("cursor") === "pointer") {
+    circleFollow.style.transform = "scale(1.5)";
+  } else {
+    circleFollow.style.transform = "scale(1)";
+  }
+});
+
+document.addEventListener("mouseout", (e) => {
+  circleFollow.style.display = "none";
+});
+
+document.addEventListener("mouseenter", (e) => {
+  circleFollow.style.display = "block";
+});
