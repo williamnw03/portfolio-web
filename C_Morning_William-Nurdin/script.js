@@ -25,10 +25,23 @@ let xPosition;
 let yPosition;
 
 document.addEventListener("mousemove", (e) => {
+  if (
+    Math.abs(xPosition - e.pageX) > 50 ||
+    Math.abs(yPosition - e.pageY) > 50
+  ) {
+    circleFollow.style.transition = "all 0.5s ease";
+  } else {
+    setTimeout(() => {
+      circleFollow.style.transition = "transform 0.5s ease";
+    }, 500);
+  }
+
   xPosition = e.pageX;
   yPosition = e.pageY;
 
   circleFollow.style.display = "block";
+
+  // console.log(e);
 
   circleFollow.style.top = `${yPosition + 10}px`;
   circleFollow.style.left = `${xPosition + 10}px`;
