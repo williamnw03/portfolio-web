@@ -21,30 +21,22 @@ document.addEventListener("scroll", (e) => {
 
 // Circle follow Cursor
 const circleFollow = document.querySelector("div.circle-follow-cursor");
-let xPosition;
-let yPosition;
+
+const mouse = { x: 0, y: 0 };
+const circle = { x: 0, y: 0 };
 
 document.addEventListener("mousemove", (e) => {
-  if (
-    Math.abs(xPosition - e.pageX) > 50 ||
-    Math.abs(yPosition - e.pageY) > 50
-  ) {
-    circleFollow.style.transition = "all 0.5s ease";
-  } else {
-    setTimeout(() => {
-      circleFollow.style.transition = "transform 0.5s ease";
-    }, 500);
-  }
+  mouse.x = e.pageX;
+  mouse.y = e.pageY;
 
-  xPosition = e.pageX;
-  yPosition = e.pageY;
+  const speed = 0.25;
+
+  circle.x = mouse.x;
+  circle.y = mouse.y;
 
   circleFollow.style.display = "block";
-
-  // console.log(e);
-
-  circleFollow.style.top = `${yPosition + 10}px`;
-  circleFollow.style.left = `${xPosition + 10}px`;
+  circleFollow.style.left = `${circle.x + 10}px`;
+  circleFollow.style.top = `${circle.y + 10}px`;
 
   const style = window.getComputedStyle(e.target);
   if (style.getPropertyValue("cursor") === "pointer") {
