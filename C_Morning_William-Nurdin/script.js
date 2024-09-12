@@ -21,22 +21,20 @@ document.addEventListener("scroll", (e) => {
 
 // Circle follow Cursor
 const circleFollow = document.querySelector("div.circle-follow-cursor");
+let detechTouch = false;
 
 const mouse = { x: 0, y: 0 };
-const circle = { x: 0, y: 0 };
 
 document.addEventListener("mousemove", (e) => {
+  if (!detechTouch) {
+    circleFollow.style.transition = "transform 0.5s ease";
+  }
   mouse.x = e.pageX;
   mouse.y = e.pageY;
 
-  const speed = 0.25;
-
-  circle.x = mouse.x;
-  circle.y = mouse.y;
-
   circleFollow.style.display = "block";
-  circleFollow.style.left = `${circle.x + 10}px`;
-  circleFollow.style.top = `${circle.y + 10}px`;
+  circleFollow.style.left = `${mouse.x + 10}px`;
+  circleFollow.style.top = `${mouse.y + 10}px`;
 
   const style = window.getComputedStyle(e.target);
   if (style.getPropertyValue("cursor") === "pointer") {
@@ -51,5 +49,11 @@ document.addEventListener("mouseout", (e) => {
 });
 
 document.addEventListener("mouseenter", (e) => {
+  detechTouch = false;
   circleFollow.style.display = "block";
+});
+
+document.addEventListener("touchstart", (e) => {
+  detechTouch = true;
+  circleFollow.style.transition = "all 0.5s ease";
 });
