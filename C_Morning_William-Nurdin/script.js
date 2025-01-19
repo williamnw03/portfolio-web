@@ -43,6 +43,7 @@ document.addEventListener("mousemove", (e) => {
 });
 
 document.addEventListener("mouseout", (e) => {
+  if (detechTouch) return;
   circleFollow.style.display = "none";
 });
 

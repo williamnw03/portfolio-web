@@ -253,6 +253,8 @@ div.main-content section.about-me div.image-about-me::before {
 
 div.main-content section.about-me div.image-about-me img {
   width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 
   filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
     drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
@@ -725,8 +727,6 @@ div.circle-follow-cursor {
 
   div.main-content section.about-me div.image-about-me img {
     width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
   }
   /* Skills */
   div.main-content section.skills h2.title-skills {
