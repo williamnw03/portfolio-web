@@ -42,10 +42,10 @@ document.addEventListener("mousemove", (e) => {
   }
 });
 
-document.addEventListener("mouseout", (e) => {
-  if (detechTouch) return;
-  circleFollow.style.display = "none";
-});
+// document.addEventListener("mouseout", (e) => {
+//   if (detechTouch) return;
+//   circleFollow.style.display = "none";
+// });
 
 document.addEventListener("mouseenter", (e) => {
   detechTouch = false;
